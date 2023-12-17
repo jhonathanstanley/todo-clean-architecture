@@ -1,19 +1,17 @@
 package dev.stanley.todocleanarchitecture.infrastructure.gateways;
 
-import dev.stanley.todocleanarchitecture.adapters.ITaskGateway;
+import dev.stanley.todocleanarchitecture.adapters.TaskGateway;
 import dev.stanley.todocleanarchitecture.core.model.TaskModel;
 import dev.stanley.todocleanarchitecture.infrastructure.repositories.TaskRepository;
 import dev.stanley.todocleanarchitecture.infrastructure.schema.TaskEntitySchema;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-
-
-public class TaskDatabaseGateway implements ITaskGateway {
+@Service
+public class TaskDatabaseGateway implements TaskGateway {
 
     private final TaskRepository taskRepository;
 
-    @Autowired
+
     public TaskDatabaseGateway(TaskRepository taskRepository){
         this.taskRepository = taskRepository;
     }
